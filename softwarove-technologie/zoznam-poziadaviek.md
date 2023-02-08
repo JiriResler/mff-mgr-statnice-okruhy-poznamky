@@ -12,7 +12,7 @@
 10.	Prenositeľnosť a multiplatformnosť aplikácií 
 11.	Testovanie a monitorovanie funkčnosti a výkonnosti
 12.	Architektúra webových aplikácií ([pozn.](poznamky/architektura-webovych-aplikacii.md))
-13.	Skriptovanie na strane serveru a klienta
+13.	Skriptovanie na strane serveru a klienta ([pozn.](poznamky/skriptovanie-na-strane-serveru-a-klienta.md))
 14.	Spolupráca s databázovými systémami 
 15.	Architektúra dátového serveru
 16.	Transakcie 
