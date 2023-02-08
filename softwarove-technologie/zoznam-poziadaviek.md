@@ -11,7 +11,7 @@
 9.	 Prístupové práva a bezpečnosť 
 10.	Prenositeľnosť a multiplatformnosť aplikácií 
 11.	Testovanie a monitorovanie funkčnosti a výkonnosti
-12.	Architektúra webových aplikácií 
+12.	Architektúra webových aplikácií ([pozn.](poznamky/architektura-webovych-aplikacii.md))
 13.	Skriptovanie na strane serveru a klienta
 14.	Spolupráca s databázovými systémami 
 15.	Architektúra dátového serveru
