@@ -1,5 +1,6 @@
 # Virtualizácia CPU
-### Key CPU virtualization terms (mechanisms)
+See also: [procesy](sprava-procesov.md)
+## Key CPU virtualization terms (mechanisms)
 - The CPU should support at least two modes of execution: a restricted **user mode** and a privileged (non-restricted) **kernel mode**.
 - Typical user applications run in user mode, and use a **system call**
 to **trap** into the kernel to request operating system services.
@@ -19,3 +20,15 @@ scheduling.
 - Sometimes the OS, during a timer interrupt or system call, might
 wish to switch from running the current process to a different one,
 a low-level technique known as a **context switch**.
+
+## Scheduling procesov - algoritmy
+- First Come, First Served
+- Shortest Job First 
+- Shortest Time-to-Completion First
+- Round Robin
+
+## Preemptive schedulers
+In the old days of batch computing, a number of **non-preemptive** schedulers were developed; such systems would run each job to completion
+before considering whether to run a new job. Virtually all modern schedulers are **preemptive**, and quite willing to stop one process from running in order to run another. This implies that the scheduler employs the mechanisms we learned about previously; in particular, the scheduler can
+perform a **context switch**, stopping one running process temporarily and
+resuming (or starting) another
