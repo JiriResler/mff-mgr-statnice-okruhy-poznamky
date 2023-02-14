@@ -21,7 +21,7 @@ scheduling.
 wish to switch from running the current process to a different one,
 a low-level technique known as a **context switch**.
 
-## Scheduling procesov - algoritmy
+## Scheduling procesov - jednoduché algoritmy
 - First Come, First Served
 - Shortest Job First 
 - Shortest Time-to-Completion First
@@ -32,3 +32,18 @@ In the old days of batch computing, a number of **non-preemptive** schedulers we
 before considering whether to run a new job. Virtually all modern schedulers are **preemptive**, and quite willing to stop one process from running in order to run another. This implies that the scheduler employs the mechanisms we learned about previously; in particular, the scheduler can
 perform a **context switch**, stopping one running process temporarily and
 resuming (or starting) another
+
+## Multi-level feedback queue algoritmus
+It has _multiple levels_ of queues, and uses _feedback_ to determine the priority of a given job, thus its name. History is its guide: pay attention to how jobs
+behave over time and treat them accordingly.
+
+**MLFQ rules:**
+
+Let A and B be processes, then:
+- **Rule 1:** If Priority(A) > Priority(B), A runs (B doesn’t).
+- **Rule 2:** If Priority(A) = Priority(B), A & B run in round-robin fashion using the time slice (quantum length) of the given queue.
+- **Rule 3:** When a job enters the system, it is placed at the highest priority (the topmost queue).
+- **Rule 4:** Once a job uses up its time allotment at a given level (regardless of how many times it has given up the CPU), its priority is reduced (i.e., it moves down one queue).
+- **Rule 5:** After some time period S, move all the jobs in the system to the topmost queue.
+
+MLFQ is interesting for the following reason: instead of demanding _a priori_ knowledge of the nature of a job, it observes the execution of a job and prioritizes it accordingly. In this way, it manages to achieve the best of both worlds: it can deliver excellent overall performance (similar to SJF/STCF) for short-running interactive jobs, and is fair and makes progress for long-running CPU-intensive workloads. For this reason, many systems use a form of MLFQ as their base scheduler.
