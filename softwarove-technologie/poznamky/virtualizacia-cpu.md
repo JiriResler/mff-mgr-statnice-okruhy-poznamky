@@ -47,3 +47,7 @@ Let A and B be processes, then:
 - **Rule 5:** After some time period S, move all the jobs in the system to the topmost queue.
 
 MLFQ is interesting for the following reason: instead of demanding _a priori_ knowledge of the nature of a job, it observes the execution of a job and prioritizes it accordingly. In this way, it manages to achieve the best of both worlds: it can deliver excellent overall performance (similar to SJF/STCF) for short-running interactive jobs, and is fair and makes progress for long-running CPU-intensive workloads. For this reason, many systems use a form of MLFQ as their base scheduler.
+
+## Proportional-share scheduler 
+Proportional-share is based around a simple concept: instead of optimizing for turnaround or response time, a scheduler might instead try to guarantee that each job obtains a certain percentage of CPU time. Approaches: lottery scheduling, stride scheduling, and the Completely Fair Scheduler (CFS) of Linux. Lottery uses randomness in a clever way (via tickets) to achieve proportional share; stride does so deterministically. CFS is a bit like weighted round-robin with dynamic time slices, but built to scale and perform well under load; it is the most widely used fair-share scheduler in existence today
+
